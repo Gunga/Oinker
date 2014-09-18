@@ -2,8 +2,13 @@ get "/users/:user_id" do
   erb :"users/profile"
 end
 
+get "/logout" do
+  session[:user_id]=nil
+  redirect "/"
+end
+
 post "/users" do
-  @user = User.find_by(user_name: params[:username])
+  @user = User.find_by(username: params[:username])
   if @user.password == Digester::Digester.digest(params[:password])
     session[:user_id] = @user.id
   end
@@ -13,7 +18,7 @@ end
 
 post "/users/new" do
   @user = User.new
-  @user.user_name = params[:username]
+  @user.username = params[:username]
   @user.password = Digester::Digester.digest(params[:password])
   @user.name = params[:name]
   @user.gravatar= params[:email]
