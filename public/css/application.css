@@ -30,7 +30,8 @@ div{
   text-align: center
 }
 #feed{ height:81%; margin-top: 5%;}
-#oink{width:100%;height: 100%}
+#oink{width:100%;height: 100%;padding:0;}
+#oink li img {width:auto; height:70%; float:left; margin:1%;}
 #oink li{
   display:block;
   width: 100%;
@@ -38,25 +39,31 @@ div{
   border-radius: 20px;
   border: 1px solid #ccc;
   margin: 1% 0;
+  text-align: left
+}
+#follow{
+  height:33%;
 }
 
 #followers{
-  width:45%;
-  height: 20%;
+  width:48%;
+  height: 90%;
   float: left;
   border-radius: 20px;
   border: 1px solid #777;
 }
 #following{
-  width:45%;
-  height: 20%;
+  width:48%;
+  height: 90%;
   float: right;
   border-radius: 20px;
   border: 1px solid #777;
 }
 #profile-top{
+  width: 80%;
+  margin: auto;
   margin-top:5%;
-  height: 50%
+  height: 62%
 }
 nav a{color:#3A3A3C; text-decoration: none; font-size: 1.4em}
 a:hover{color:#EEBA4C;}
