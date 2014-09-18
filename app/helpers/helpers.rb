@@ -5,6 +5,7 @@ helpers do
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="users/#{current_user}">Profile</a></li>
+    <li><a href="logout">Logout</a></li>
   </ul>
 
   <h1>OINKER</h1>
