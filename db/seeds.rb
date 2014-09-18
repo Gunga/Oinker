@@ -1,4 +1,4 @@
-User.create(name: "Devon Bradley", username: "dbradleyfl", password: "devon1", gravatar: "")
+User.create(name: "Devon Bradley", username: "dbradleyfl", password: "devon1", gravatar: "dbradleyfl@gmail.com")
 
 Oink.create(message: "Dude... RE-OINK: @DVega", user_id: 2)
 
@@ -18,7 +18,7 @@ Follower.create(user_id: 1 , follower_id: 3)
 
 Follower.create(user_id: 1 , follower_id: 4)
 
-User.create(name: "Danny Vega", username: "DVega", password: "danny2", gravatar: "")
+User.create(name: "Danny Vega", username: "DVega", password: "danny2", gravatar: "dannyevega@gmail.com")
 
 Oink.create(message: "That's sick", user_id: 2)
 
@@ -34,7 +34,7 @@ Follower.create(user_id: 2, follower_id: 1)
 
 Follower.create(user_id: 2, follower_id: 4)
 
-User.create(name: "Melissa Porto", username: "mporto", password: "porto101", gravatar: "")
+User.create(name: "Melissa Porto", username: "mporto", password: "porto101", gravatar: "melroman26@gmail.com")
 
 Oink.create(message: "Righttttt", user_id: 3)
 
@@ -50,7 +50,7 @@ Follower.create(user_id: 3, follower_id: 1)
 
 Follower.create(user_id: 3, follower_id: 2)
 
-User.create(name: "Joan Torres", username: "Gunga", password: "imthinkimfunny", gravatar: "")
+User.create(name: "Joan Torres", username: "Gunga", password: "imthinkimfunny", gravatar: "joan.torres@upr.edu")
 
 Oink.create(message: "Why did the chicken cross the road?", user_id: 4)
 
