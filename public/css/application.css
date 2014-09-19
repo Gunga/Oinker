@@ -35,20 +35,29 @@ div{
 #oink{
   max-width: 50%;
   padding: 20px;
-  height: auto;
+
   padding:0;
   margin: 0 auto;
 }
 
-#oink li img {width:auto; height:70%; float:left; margin:1%;}
+
 #oink li{
+  padding:20px 0 ;
   display:block;
-  height:20%;
   width: auto;
   border-radius: 20px;
   border: 1.5px solid #ccc;
   margin: 1% 0;
   text-align: center
+}
+#oink section{
+  width: 49%;
+  display: inline-block;
+  vertical-align: middle;
+}
+#oink li section img{
+  width:48%;
+  vertical-align: middle;
 }
 #follow{
   height:33%;

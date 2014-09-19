@@ -3,10 +3,16 @@
   <ul id="oink">
    <%current_user_info.oinks_from_who_i_follow.each do |oink| %>
     <li>
-        <img src="http://www.gravatar.com/avatar/<%= gravatar_image %>?d=http%3A%2F%2Fi.imgur.com%2FUZbVXSI.png&s=200" width="50" height="50">
-        <p><%=oink.user.name%></p>
-        <p><%=oink.message%></p>
-        <p><%=oink.created_at%></p>
+        <a href="/users/<%=oink.user_id%>">
+            <section>
+                <img src="http://www.gravatar.com/avatar/<%= gravatar_image(oink.user_id) %>?d=http%3A%2F%2Fi.imgur.com%2FUZbVXSI.png&s=200" >
+            </section>
+            <section>
+                <p><%=oink.user.name%></p>
+                <p><%=oink.message%></p>
+                <p><%=oink.created_at%></p>
+            </section>
+        </a>
     </li>
     <%end%>
   </ul>
