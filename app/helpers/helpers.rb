@@ -16,4 +16,13 @@ helpers do
   def current_user
     session[:user_id]
   end
+
+  def current_user_info
+    User.find(current_user)
+  end
+
+  def user_oinks
+    @user = User.find(current_user)
+    @user.oinks.order(created_at: :desc)
+  end
 end
