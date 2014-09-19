@@ -16,4 +16,13 @@ helpers do
   def current_user
     session[:user_id]
   end
+
+  def user_oinks
+    @user = User.find(current_user)
+    @user.oinks.order(created_at: :desc)
+  end
+
+  def gravatar_image
+    Digester::Digester.digest(User.find(params[:user_id]).gravatar)
+  end
 end
