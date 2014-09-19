@@ -32,6 +32,10 @@ nav{
   overflow: hidden;
 }
 
+textarea:focus{
+  outline: none;
+}
+
 nav ul{list-style-type: none; float: left;}
 
 nav li{display: inline; margin: 0 10px;}
@@ -136,8 +140,10 @@ color:
 /*FORM STYLING*/
 label{width:130px; display:inline-block}
 input{margin-bottom:20px}
+
 textarea{
   margin-bottom: 20px;
+  padding: 20px;
   border: 1px dashed #BBB;
   border-radius: 20px;
   resize: none;
@@ -149,7 +155,7 @@ input[type="submit"]{
 }
 input[type="submit"]:hover{
   border-radius:6px;
-  background-color:aliceblue;
-  color:red
+  background-color: #C6FFA1;
+  color: #FEAEFF
 }
 form{margin: 20px}
