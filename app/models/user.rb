@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
     list_of_oinks.sort_by(&:created_at).reverse
   end
 
+  def following_ids
+    following.map { |followee| followee.user_id }
+  end
+
 end
