@@ -79,5 +79,20 @@ a:hover{color:#EEBA4C;}
 /*FORM STYLING*/
 label{width:130px; display:inline-block}
 input{margin-bottom:20px}
-textarea{margin-bottom:20px}
+textarea{
+  margin-bottom: 20px;
+  border: 1px dashed #BBB;
+  border-radius: 20px;
+  resize: none;
+}
+input[type="submit"]{
+  border-radius:6px;
+  background-color:white;
+  border:1px solid #A9DDD9
+}
+input[type="submit"]:hover{
+  border-radius:6px;
+  background-color:aliceblue;
+  color:red
+}
 form{margin: 20px}
