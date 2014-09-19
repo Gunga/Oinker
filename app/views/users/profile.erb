@@ -5,13 +5,13 @@
   </div>
 
   <section>
-    <center><h2>Hi, I'm <%= User.find(current_user).name.split.map(&:capitalize).join(' ') %></h2></center>
-    <center><h2>@<%= User.find(current_user).username %></h2></center>
+    <center><h2>Hi, I'm <%= @user_full_name %></h2></center>
+    <center><h2>@<%= @username %></h2></center>
   </section>
 
   <section id="follow">
     <div id="follow-info">
-      <strong>Followers: <%= User.find(current_user).followers.count %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Following: <%= Follower.where(follower_id: params[:user_id]).count %></strong>
+      <strong>Followers: <%= @follower_count %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Following: <%= @following_count %></strong>
     </div>
   </section>
 </section>

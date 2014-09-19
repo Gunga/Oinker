@@ -2,12 +2,10 @@
   width:100%;
 }
 
-body{
-  margin-top: 150px;
-}
 th {
   text-align: left;
 }
+
 header{
   height: 9%;
   background-color: #E3493B;

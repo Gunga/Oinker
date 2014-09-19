@@ -29,4 +29,48 @@ helpers do
   def gravatar_image(id)
     Digester::Digester.digest(User.find(id).gravatar)
   end
+
+  def capital_user_real_name
+    User.find_by(id: params[:user_id]).name.split.map(&:capitalize).join(' ')
+  end
+
+  def profile_handle
+    User.find_by(id: params[:user_id]).username
+  end
+
+  def follower_count
+    User.find_by(id: params[:user_id]).followers.count
+  end
+
+  def following_count
+    Follower.where(follower_id: params[:user_id]).count
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
