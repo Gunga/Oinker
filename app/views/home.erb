@@ -1,18 +1,16 @@
 <%=erb :nav%>
-<div id="feed">
+<div class="container" id="feed">
   <ul id="oink">
    <%@oinks.each do |oink| %>
     <li>
-        <a href="/users/<%=oink.user_id%>">
-            <section>
-                <img src="http://www.gravatar.com/avatar/<%= gravatar_image(oink.user_id) %>?d=http%3A%2F%2Fi.imgur.com%2FUZbVXSI.png&s=200" >
-            </section>
-            <section>
-                <p><%=oink.user.name%></p>
-                <p><%=oink.message%></p>
-                <p><%=oink.created_at%></p>
-            </section>
-        </a>
+        <section>
+            <a href="/users/<%=oink.user_id%>"><img src="http://www.gravatar.com/avatar/<%= gravatar_image(oink.user_id) %>?d=http%3A%2F%2Fi.imgur.com%2FUZbVXSI.png&s=200" ></a>
+        </section>
+        <section id="oink-text">
+            <h3><%= oink.user.name %></h3>
+            <p><%=oink.message%></p>
+            <p><a href="/users/<%=oink.user_id%>">@<%=oink.user.username%></a> <span class="small">at <%=oink.created_at%></span></p>
+        </section>
     </li>
     <%end%>
   </ul>

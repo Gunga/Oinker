@@ -2,7 +2,7 @@ require 'digester'
 
 User.create(name: "Devon Bradley", username: "dbradleyfl", password: Digester::Digester.digest("devon1"), gravatar: "dbradleyfl@gmail.com")
 
-Oink.create(message: "Dude... RE-OINK: @DVega", user_id: 2)
+Oink.create(message: "Dude... RE-OINK: @DVega", user_id: 1)
 
 Oink.create(message: "I don't follow Joan because he is a dork!", user_id: 1)
 
