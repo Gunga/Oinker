@@ -22,11 +22,11 @@ helpers do
   end
 
   def user_oinks
-    @user = User.find(current_user)
+    @user = User.find(params[:user_id])
     @user.oinks.order(created_at: :desc)
   end
 
-  def gravatar_image
-    Digester::Digester.digest(User.find(params[:user_id]).gravatar)
+  def gravatar_image(id)
+    Digester::Digester.digest(User.find(id).gravatar)
   end
 end
