@@ -1,30 +1,28 @@
 <%= nav %>
 <section id="profile-top">
   <div id="image-area">
-    <img src="great.jpg" width="300" height="300">
+    <img src="http://www.gravatar.com/avatar/<%= gravatar_image %>?d=http%3A%2F%2Fi.imgur.com%2FUZbVXSI.png&s=200" width="300" height="300">
   </div>
 
+  <section>
+    <center><h2>Hi, I'm <%= User.find(current_user).name.split.map(&:capitalize).join(' ') %></h2></center>
+    <center><h2>@<%= User.find(current_user).username %></h2></center>
+  </section>
+
   <section id="follow">
-    <div id="followers">
-      <strong>Followers: 3</strong>
-    </div>
-    <div id="following">
-      <strong>Following: 1003</strong>
+    <div id="follow-info">
+      <strong>Followers: <%= User.find(current_user).followers.count %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Following: <%= Follower.where(follower_id: params[:user_id]).count %></strong>
     </div>
   </section>
 </section>
 
 <div id="feed">
   <ul id="oink">
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
-    <li><p>TEST, TEST, TEST</p></li>
+    <% user_oinks.each do |oink| %>
+    <li>
+      <p><%= oink.message %></p>
+      <p><%= oink.created_at %></p>
+    </li>
+    <% end %>
   </ul>
 </div>

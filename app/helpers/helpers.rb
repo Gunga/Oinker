@@ -25,4 +25,8 @@ helpers do
     @user = User.find(current_user)
     @user.oinks.order(created_at: :desc)
   end
+
+  def gravatar_image
+    Digester::Digester.digest(User.find(params[:user_id]).gravatar)
+  end
 end
