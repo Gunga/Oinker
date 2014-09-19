@@ -1,4 +1,5 @@
 get "/users/:user_id" do
+  @user = current_user_info
   erb :"users/profile"
 end
 
@@ -9,6 +10,8 @@ end
 
 post "/users" do
   @user = User.find_by(username: params[:username])
+  redirect "/" unless @user
+
   if @user.password == Digester::Digester.digest(params[:password])
     session[:user_id] = @user.id
   end

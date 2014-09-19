@@ -1,7 +1,7 @@
-<%=nav%>
+<%=erb :nav%>
 <div id="feed">
   <ul id="oink">
-   <%current_user_info.oinks_from_who_i_follow.each do |oink| %>
+   <%@oinks.each do |oink| %>
     <li>
         <a href="/users/<%=oink.user_id%>">
             <section>
