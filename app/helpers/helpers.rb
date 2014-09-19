@@ -17,7 +17,7 @@ helpers do
   end
 
   def capital_user_real_name
-    User.find_by(id: params[:user_id]).name.split.map(&:capitalize).join(' ')
+    User.find_by(id: params[:user_id]).name.downcase.split.map(&:capitalize).join(' ')
   end
 
   def profile_handle

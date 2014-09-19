@@ -1,4 +1,5 @@
 <%= erb :nav %>
+<div class="container">
 <section id="profile-top">
   <div id="image-area">
     <img src="http://www.gravatar.com/avatar/<%= gravatar_image(params[:user_id]) %>?d=http%3A%2F%2Fi.imgur.com%2FUZbVXSI.png&s=200" width="300" height="300">
@@ -11,12 +12,13 @@
 
   <section id="follow">
     <div id="follow-info">
-      <strong>Followers: <%= @follower_count %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Following: <%= @following_count %></strong>
+      <strong><a href="/users/<%= params[:user_id] %>/followers">Followers</a>: <%= @follower_count %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <a href="/users/<%= params[:user_id] %>/following">Following</a>: <%= @following_count %></strong>
     </div>
   </section>
 </section>
 
 <div id="feed">
+  <u><h1>My Oinks</h1></u>
   <ul id="oink">
     <% user_oinks.each do |oink| %>
     <li>
@@ -25,4 +27,5 @@
     </li>
     <% end %>
   </ul>
+</div>
 </div>
