@@ -1,7 +1,3 @@
-get "/users/:user_id" do
-  erb :"users/profile"
-end
-
 get "/logout" do
   session[:user_id]=nil
   redirect "/"
