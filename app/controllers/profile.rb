@@ -8,7 +8,11 @@ get "/users/:user_id" do
 end
 
 get '/users/:user_id/followers' do
+  # some redundant logic between this and the next route; maybe abstract
+  #  it out into a helper somehow?
   @user = current_user_info
+  # try to avoid hard-coding visible strings in Ruby like this; this logic
+  #  should be contained either in ERB or front-end code
   @list_name = "Followers"
   @allfollowers = Follower.where(user_id: params[:user_id])
   @users = []
@@ -34,6 +38,7 @@ get '/users/:user_id/following' do
   erb :list_users
 end
 
+# route should just be '/users' without an ID
 get '/all_users' do
   @user = current_user_info
   @list_name = "All Oinkers"

@@ -3,10 +3,13 @@ get "/logout" do
   redirect "/"
 end
 
+# change this to a '/login' route of some sort
 post "/users" do
   @user = User.find_by(username: params[:username])
+  # nice!
   redirect "/" unless @user
 
+  # even nicer!
   if @user.password == Digester::Digester.digest(params[:password])
     session[:user_id] = @user.id
   end
@@ -14,6 +17,7 @@ post "/users" do
   redirect "/"
 end
 
+# get rid of the '/new' portion, just POST to '/users'
 post "/users/new" do
   @user = User.new
   @user.username = params[:username]
