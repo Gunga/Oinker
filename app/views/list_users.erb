@@ -4,8 +4,10 @@
     <h1><%=  @list_name  %></h1>
     <ul>
         <% @users.each do |user| %>
+            <!-- cannot have <a> element that spans multiple <li>; not valid HTML -->
             <li><a href="/users/<%=  User.find_by(username: user).id  %>"><img src="http://www.gravatar.com/avatar/<%= gravatar_image( User.find_by(username: user).id ) %>?d=http%3A%2F%2Fi.imgur.com%2FUZbVXSI.png&s=150" width="150" height="150"></li>
             <li> <%= user %> </a> </li>
+            <!-- cannot have <br> inside a <ul> but not within an <li> -->
             <br>
         <% end %>
     </ul>

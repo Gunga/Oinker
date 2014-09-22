@@ -6,12 +6,14 @@
   </div>
 
   <section>
+    <!-- I believe the <center> tag is deprecated; use CSS to center things -->
     <center><h2>Hi, I'm <%= @user_full_name %></h2></center>
     <center><h2>@<%= @username %></h2></center>
   </section>
 
   <section id="follow">
     <div id="follow-info">
+      <!-- outer element should probably be the <a>, then the <strong> -->
       <strong><a href="/users/<%= params[:user_id] %>/followers">Followers</a>: <%= @follower_count %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <a href="/users/<%= params[:user_id] %>/following">Following</a>: <%= @following_count %></strong>
     </div>
     <% unless params[:user_id] == current_user.to_s %>
@@ -29,6 +31,7 @@
 </section>
 
 <div id="feed">
+  <!-- <u> element is deprecated; use CSS to style -->
   <u><h1>My Oinks</h1></u>
   <ul id="oink">
     <% user_oinks.each do |oink| %>

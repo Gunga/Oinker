@@ -1,4 +1,6 @@
 helpers do
+  # consider memoizing all of the functionality in these! Memoization is fun!
+
   def current_user
     session[:user_id]
   end
@@ -17,6 +19,7 @@ helpers do
   end
 
   def capital_user_real_name
+    # hell YEAH
     User.find_by(id: params[:user_id]).name.downcase.split.map(&:capitalize).join(' ')
   end
 

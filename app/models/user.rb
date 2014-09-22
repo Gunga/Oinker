@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
         list_of_oinks << oink
       end
     end
+    # hell YEAH; Derek says this should be handled using ActiveRecord's
+    #  capabilities (like 'order'), not done in Ruby
     list_of_oinks.sort_by(&:created_at).reverse
   end
 

@@ -1,6 +1,8 @@
 <div id="new-oink">
   <form action="/oinks/new" method="post">
     <h1>Oink something!</h1>
+    <!-- note that 'placeholder' is not supported cross-browser -->
+    <!-- use a form <label> -->
     <textarea rows="5" cols="40" maxlength="140" name="oink" placeholder="140 characters max"></textarea><br>
     <input type="submit" value="Oink!">
   </form>
